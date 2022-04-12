@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www.js",
+    "start": "nodemon ./bin/www.js",
     "ps": "npm start",
     "debug": "DEBUG=express-microservice-template:* npm start",
     "prepare": "husky install"
@@ -26,7 +26,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.7"
+    "lint-staged": "^12.3.7",
+    "nodemon": "^2.0.15"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
