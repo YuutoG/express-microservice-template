@@ -9,7 +9,6 @@ const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 
 const app = express()
-console.log('Error')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -38,5 +37,4 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
-console.log('Error')
 module.exports = app
