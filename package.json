@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www.js",
-    "ps": "npm start",
     "debug": "DEBUG=express-microservice-template:* npm start",
     "prepare": "husky install"
   },
