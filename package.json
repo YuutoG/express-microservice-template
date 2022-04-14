@@ -2,8 +2,9 @@
   "name": "express-microservice-template",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "nodemon ./bin/www.mjs",
+    "start": "nodemon ./bin/www.js",
     "debug": "DEBUG=express-microservice-template:* npm start",
     "prepare": "husky install",
     "windowsDebug": "@powershell -Command $env:DEBUG='*';npm start"
