@@ -4,9 +4,10 @@
  * Module dependencies.
  */
 
-const app = require('../app')
-const debug = require('debug')('express-microservice-template:server')
-const http = require('http')
+import app from '../app.mjs'
+import { createServer } from 'http'
+import debug from 'debug'
+debug('express-microservice-template:server')
 
 /**
  * Get port from environment and store in Express.
@@ -24,7 +25,7 @@ app.set('port', port)
  * Create HTTP server.
  */
 
-const server = http.createServer(app)
+const server = createServer(app)
 
 /**
  * Listen on provided port, on all network interfaces.
