@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nodemon ./bin/www.mjs",
     "debug": "DEBUG=express-microservice-template:* npm start",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "windowsDebug": "@powershell -Command $env:DEBUG='*';npm start"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
