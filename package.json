@@ -16,8 +16,11 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "mariadb": "^3.0.0",
     "morgan": "~1.9.1",
-    "sequelize": "^6.18.0"
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0",
+    "sequelize-auto": "^0.8.8"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -27,7 +30,8 @@
     "eslint-plugin-promise": "^5.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
