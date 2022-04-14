@@ -30,6 +30,7 @@
     "nodemon": "^2.0.15"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix",
+    "*.mjs": "eslint --cache --fix"
   }
 }
