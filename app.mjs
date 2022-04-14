@@ -1,24 +1,22 @@
 import createError from 'http-errors'
-import express, { json, urlencoded } from 'express'
+import express from 'express'
 import path from 'path'
-import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-
 import indexRouter from './api/routes/index.mjs'
 import usersRouter from './api/routes/users.mjs'
-import dotenv from 'dotenv'
-dotenv.config()
+import { middlewares } from './middlewares/middlewares.mjs'
+
 const app = express()
+
 // view engine setup
 app.set('views', path.resolve('api/views'))
 app.set('view engine', 'ejs')
 
+// setting up middlewares
+app.use(...middlewares)
+// logging requests
 app.use(logger('dev'))
-app.use(json())
-app.use(urlencoded({ extended: false }))
-app.use(cookieParser())
 app.use(express.static(path.resolve('public')))
-
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
