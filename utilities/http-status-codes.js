@@ -120,4 +120,4 @@ const HttpStatusCodes = {
   CONFLICT: 409
 }
 
-export default HttpStatusCodes
+module.exports = HttpStatusCodes
