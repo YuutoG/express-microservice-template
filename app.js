@@ -1,10 +1,10 @@
-import createError from 'http-errors'
-import express from 'express'
-import path from 'path'
-import logger from 'morgan'
-import indexRouter from './api/routes/index.mjs'
-import usersRouter from './api/routes/users.mjs'
-import { middlewares } from './middlewares/middlewares.mjs'
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const logger = require('morgan')
+const indexRouter = require('./api/routes/index.js')
+const usersRouter = require('./api/routes/users.js')
+const middlewares = require('./middlewares/middlewares.js')
 
 const app = express()
 
@@ -35,4 +35,4 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
-export default app
+module.exports = app
