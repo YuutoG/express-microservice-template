@@ -2,7 +2,6 @@
   "name": "express-microservice-template",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "start": "nodemon ./bin/www.js",
     "debug": "DEBUG=express-microservice-template:* npm start",
@@ -35,7 +34,6 @@
     "sequelize-cli": "^6.4.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.mjs": "eslint --cache --fix"
+    "*.js": "eslint --cache --fix"
   }
 }

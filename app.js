@@ -1,10 +1,9 @@
-import createError from 'http-errors'
-import express from 'express'
-import path from 'path'
-import logger from 'morgan'
-import indexRouter from './api/routes/index.mjs'
-import usersRouter from './api/routes/users.mjs'
-import { middlewares } from './middlewares/middlewares.mjs'
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const logger = require('morgan')
+const indexRouter = require('./api/routes/index.js')
+const middlewares = require('./middlewares/middlewares.js')
 
 const app = express()
 
@@ -16,9 +15,10 @@ app.set('view engine', 'ejs')
 app.use(...middlewares)
 // logging requests
 app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.resolve('public')))
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -35,4 +35,4 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
-export default app
+module.exports = app
