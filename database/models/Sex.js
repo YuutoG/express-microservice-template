@@ -2,9 +2,8 @@
 const {
   Model, DataTypes
 } = require('sequelize')
-const sequelize = require('../connection.js')
-
-class Sexo extends Model {
+const connection = require('../connection.js')
+class Sex extends Model {
   /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,17 +13,17 @@ class Sexo extends Model {
     // define association here
   }
 }
-Sexo.init({
+Sex.init({
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  nombre: DataTypes.STRING
+  name: DataTypes.STRING
 }, {
-  sequelize: sequelize.connect(),
-  modelName: 'Sexo'
+  sequelize: connection.connect(),
+  modelName: 'Sex'
 })
 
-module.exports = Sexo
+module.exports = Sex

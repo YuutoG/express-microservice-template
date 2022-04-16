@@ -1,11 +1,11 @@
-const { User, Sexo } = require('../../database/models/index.js')
+const { User, Sex } = require('../../database/models/index.js')
 const HttpStatusCodes = require('../../utilities/http-status-codes.js')
 class UserController {
   static async showAll (req, res) {
     const usuarios = await User.findAll({
       include: [
         {
-          model: Sexo,
+          model: Sex,
           required: true
         }
       ]

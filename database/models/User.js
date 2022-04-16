@@ -2,7 +2,7 @@
 const {
   Model, DataTypes
 } = require('sequelize')
-const sequelize = require('../connection.js')
+const connection = require('../connection.js')
 
 class User extends Model {
   /**
@@ -23,14 +23,10 @@ User.init({
   },
   firstName: DataTypes.STRING,
   lastName: DataTypes.STRING,
-  email: DataTypes.STRING,
-  idSexo: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  }
+  idSexo: DataTypes.INTEGER,
+  active: DataTypes.BOOLEAN
 }, {
-  sequelize: sequelize.connect(),
+  sequelize: connection.connect(),
   modelName: 'User'
 })
-
 module.exports = User
