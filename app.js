@@ -3,7 +3,6 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const indexRouter = require('./api/routes/index.js')
-const usersRouter = require('./api/routes/users.js')
 const middlewares = require('./middlewares/middlewares.js')
 
 const app = express()
@@ -16,9 +15,10 @@ app.set('view engine', 'ejs')
 app.use(...middlewares)
 // logging requests
 app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.resolve('public')))
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
